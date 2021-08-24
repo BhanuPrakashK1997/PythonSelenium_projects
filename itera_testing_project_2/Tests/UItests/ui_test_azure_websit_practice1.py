@@ -1,5 +1,5 @@
 from PageAction.Commonfunctions import CommonFunctions
-from PageObject.azure_website_practice1_objects import Practice1
+from PageObject.azure import Practice1
 import time
 import yaml
 
@@ -9,7 +9,8 @@ with open('../TestData/p1_creds.yaml', 'r') as file:
 commonfun = CommonFunctions
 p1_objects = Practice1
 
-commonfun.open_url('https://itera-qa.azurewebsites.net/home/automation')
+# commonfun.open_url('https://itera-qa.azurewebsites.net/home/automation')
+commonfun
 commonfun.maximize_browser()
 time.sleep(5)
 

@@ -34,7 +34,7 @@ class Automation:
 
     move_to_trash ='//ul[@id="gallery"]/child::li'
     trash_area = '//span[@class="ui-icon ui-icon-trash"]'
-    
+
     slider_xpath = '//div[@id="slider"]/child::span'
 
     resizable_xpath = '//div[@id="resizable"]/child::div[3]'
