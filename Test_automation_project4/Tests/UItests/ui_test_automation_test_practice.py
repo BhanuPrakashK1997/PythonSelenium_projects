@@ -2,6 +2,7 @@ from PageObject.automation_practice_test_objects import Automation
 from PageAction.Commonfunctions import CommonFunctions
 import time
 import yaml
+from selenium.webdriver.common.by import By
 
 with open('../TestData/automation_creds.yaml','r') as file:
     a_creds = yaml.load(file)
@@ -45,27 +46,31 @@ testfunc.click_on_element(auto.submit_xpath)
 """ RIGHT SIDE WEBELEMTS """
 
 testfunc.double_click(auto.doblue_click_copytext_xpath)
+testfunc.maximize_browser()
+time.sleep(5)
+
 
 # #drag and drop
-source = testfunc.browser.find_element_by_xpath('//div[@id="draggable"]/child::p')
-target = testfunc.browser.find_element_by_xpath('//div[@id="droppable"]')
+source = testfunc.browser.find_element(By.XPATH,auto.dragable_part_xpath)
+target = testfunc.browser.find_element(By.XPATH,auto.dropable_part_xpath)
 testfunc.dragAndDrop(source,target)
 
-testfunc.scrollDown()
+
 # moveTotrash use drag and drop
-move_trash = testfunc.browser.find_element_by_xpath('//ul[@id="gallery"]/child::li')
-trash_area = testfunc.browser.find_element_by_xpath('//span[@class="ui-icon ui-icon-trash"]')
+move_trash = testfunc.browser.find_element(By.XPATH,auto.move_to_trash)
+trash_area = testfunc.browser.find_element(By.XPATH,auto.trash_area)
 testfunc.dragAndDrop(move_trash,trash_area)
 
 
-# # slider = testfunc.find_xpath_element(auto.slider_xpath)
-slider = testfunc.browser.find_element_by_xpath('//div[@id="slider"]/child::span')
+
+
+slider = testfunc.browser.find_element(By.XPATH,auto.slider_xpath)
 testfunc.Move_element(slider,60,0)
+time.sleep(5)
 
 
-# resizable = testfunc.find_xpath_element(auto.resizable_xpath)
-resizable = testfunc.browser.find_element_by_xpath('//div[@id="resizable"]/child::div[3]')
-testfunc.Move_element(resizable,120,120)
+resizable = testfunc.browser.find_element(By.XPATH,auto.resizable_xpath)
+testfunc.Move_element(resizable,50,60)
 
 
 testfunc.close()

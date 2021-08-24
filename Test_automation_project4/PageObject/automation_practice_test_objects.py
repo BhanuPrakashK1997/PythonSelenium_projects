@@ -32,10 +32,9 @@ class Automation:
     dragable_part_xpath= '//div[@id="draggable"]/child::p'
     dropable_part_xpath = '//div[@id="droppable"]'
 
-    move_to_trash_img_xpath = '//ul[@id="gallery"]/child::li/child::img'
     move_to_trash ='//ul[@id="gallery"]/child::li'
-
     trash_area = '//span[@class="ui-icon ui-icon-trash"]'
+    
     slider_xpath = '//div[@id="slider"]/child::span'
 
     resizable_xpath = '//div[@id="resizable"]/child::div[3]'
